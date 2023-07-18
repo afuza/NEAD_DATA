@@ -1,0 +1,9 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "^3.275",
+        "ramsey/uuid": "^4.7",
+        "geoip2/geoip2": "^2.13",
+        "matomo/device-detector": "^6.1",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

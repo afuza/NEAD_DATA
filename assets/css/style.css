@@ -1,0 +1,393 @@
+
+body{
+   background-color: #0a0000;
+   background-position: center;
+   font-family: Hack, monospace; 
+   overflow: hidden;
+}
+.hack-fuid{
+    border-bottom: #149414 1px solid;
+}
+.login-tittle{
+    color: #149414;
+    font-size: 30px;
+    font-weight: bold;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    font-family: HACK, monospace;
+}
+
+
+::-webkit-input-placeholder {
+    color: #149414 !important;
+}
+
+
+.bg-green{
+    background-color: #149414;
+}
+
+.text-green{
+    color: #149414;
+}
+
+.btn-green{
+    background-color: transparent;
+    border: #149414 1px solid;
+    color: #149414;
+}
+
+.btn-green-full{
+    background-color: #149414;
+    color: #fafdfa;
+}
+
+.btn-green-full:hover{
+    background-color: transparent;
+    color: #149414;
+    border: #149414 1px solid;
+}
+.btn-green:hover{
+    background-color: #149414;
+    color: #fafdfa;
+    border: #149414 1px solid;
+}
+
+.nav-hack{
+   background-color: transparent;
+   padding: 20px 20px 20px 20px;
+}
+.nav-link{
+   color: #149414;
+   font-size: 14px;
+   width: 100px;
+   font-weight: bold;
+   margin: auto;
+}
+
+.nav-link:hover{
+   color: #f3f7f3;
+}
+
+.active{
+   color: #f3f7f3;
+}
+
+.icon{
+    padding-right: 11px;
+    width: 30px;
+}
+
+.main{
+    color: #149414;
+    margin-left: 10px;
+    font-family: Hack, monospace; 
+}
+
+.card{
+    background-color: transparent;
+    border: #149414 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.table{
+    background-color: transparent;
+    text-align: center;
+}
+
+.vs{
+    color: #149414;
+}
+
+.table-green{
+    background-color: transparent;
+    color: #0a0000;
+    border: #149414 1px solid;
+    border-radius: 10px;
+}
+
+.table-bordered > tbody> tr > td{
+    background-color: transparent;
+    color: #149414;
+    border: #149414 1px solid;
+ }
+ .table-bordered > thead> tr > th{
+    background-color: transparent;
+    color: #149414;
+    border: #149414 1px solid;
+    text-align: center;
+ }
+
+.form-control{
+    background-color: transparent;
+    border: #149414 1px solid;
+    color: #149414;
+}
+
+.form-control:focus{
+    background-color: transparent;
+    border: #149414 1px solid;
+    color: #149414;
+    box-shadow: none;
+}
+[type="search"]::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    background-color: #149414;
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    background-size: 20px 20px;
+    height: 20px;
+    width: 20px;
+}
+.pagination > li.disabled > a, .pagination > li.disabled > span{
+    background-color:transparent;
+    border: #149414 1px solid;
+    color: #149414;
+}
+.pagination > li > a, .pagination > li > span{
+    background-color:transparent;
+    border: #149414 1px solid;
+    color: #149414;
+}
+
+.pagination > li > a:hover,.pagination > li > span:hover{
+    background-color: green;
+    border: #149414 1px solid;
+    color: #fafdfa;
+    box-shadow: none;
+    border-color: #149414;
+}
+.pagination > li.active > a, .pagination > li.active > span{
+    background-color:green;
+    color: #fafdfa;
+    border: #149414 1px solid; 
+}
+
+.pagination > li > a:focus,.pagination > li > span:focus{
+    background-color: transparent;
+    border: #149414 1px solid;
+    box-shadow: #149414 1px 1px 4px;
+    color: #fafdfa;
+}
+.modal{
+    margin: auto;
+}
+.modal-content{
+    background-color:rgba(0, 0, 0, 0.6);
+    border: #149414 1px solid;
+    border-radius: 10px;
+}
+
+.modal-header{
+    border-bottom: #149414 1px solid;
+    color: #149414;
+}
+.modal-footer{
+    border-bottom: #149414 1px solid;
+    color: #149414;
+    border: #149414 1px solid;
+}
+
+.modal-body{
+    color: #149414;
+}
+label{
+    margin-bottom: 10px;
+}
+
+textarea{
+    resize: none;
+}
+
+.link-ss{
+    background-color: transparent;
+    color: #149414;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border: none !important;
+    box-shadow: none!important;
+}
+
+.link-ss:hover{
+    color: #f3f7f3;
+}
+
+.link-hapus{
+    color: #149414;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none!important;
+}
+
+.link-hapus:hover{
+    color: #e91b1b;
+}
+
+.bg-none-green{
+    color: #149414;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none!important;
+}
+
+.bg-none-green:hover{
+    color: #dbdf0c;
+}
+
+.bg-note{
+    color: #149414;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none!important;
+}
+
+.bg-note:hover{
+    color: #0658d1;
+}
+
+.img-login{
+    width: 600px;
+}
+.img-login-v{
+    position: absolute;
+    z-index: -100;
+}
+footer {
+    border-top: #149414 1px solid;
+    position: fixed;
+    height: 40px;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.footer-logout{
+margin-top: 8px;
+}
+
+.toggle.hacker-mail{
+    color: #149414;
+    font-family: Hack, monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hello_img{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+input[type=file]::file-selector-button{
+    background-color: #149414;
+    border: #149414 1px solid;
+    color: #0f0f0f;
+}
+
+
+.custom-file-input {
+    color: #149414;
+    padding: 6px;
+    border: #149414 1px solid;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.custom-file-input input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-input:hover {
+    background: #149414;
+    color: white;
+}
+#your_modal_date{
+    background-color:transparent;
+    border: #149414 1px solid;
+    padding: 10px;
+}
+#your_modal_detail{
+    background-color:transparent;
+    border: #149414 1px solid;
+    padding: 10px;
+}
+#image-preview {
+    max-width: 40%;
+    margin: auto;
+    display: none;
+}
+#image-preview-2 {
+    max-width: 40%;
+    margin: auto;
+}
+#image-preview-3{
+    max-width: 40%;
+    margin: auto;
+}
+
+
+.btn-close{
+    background-color: #149414;
+}
+
+.text-ip{
+    color: #149414;
+    font-family: Hack, monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+.text-ip{
+    position: absolute;
+    margin-top: 21px;
+    margin-top: 10px;
+}
+.text-ip:hover {
+    color: #dbdf0c;
+    cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #149414; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #149414; 
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #149414; 
+  }
+
