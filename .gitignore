@@ -10,4 +10,5 @@ composer.phar
 .env.local
 .env.staging
 
-.mmdb
+/core/GeoLite2-City.mmdb
+
