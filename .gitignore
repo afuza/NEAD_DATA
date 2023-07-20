@@ -12,3 +12,4 @@ composer.phar
 
 /core/GeoLite2-City.mmdb
 /core/sandbox.php
+/assets/

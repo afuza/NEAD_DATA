@@ -189,7 +189,7 @@ include_once("../theme/header.php");
     </div>
 </div>
 
-<script src="../assets/js/tabel-situs.js"></script>
+<script src="https://nead-pull.b-cdn.net/assets/js/tabel-situs.js"></script>
 <?php
 include_once("../theme/footer.php");
 ?>

@@ -7,8 +7,7 @@ include_once("../theme/header.php");
     <div class="col-lg-12">
         <div class="main">
             <h3 class="text-center mt-5">Email Saving</h3>
-            <button class="btn btn-green mt-2" data-bs-toggle="modal" data-bs-target="#inputdata"><i
-                    data-feather="plus"></i>ADD</button>
+            <button class="btn btn-green mt-2" data-bs-toggle="modal" data-bs-target="#inputdata"><i data-feather="plus"></i>ADD</button>
             <div class="col-lg-12 mt-4">
                 <div class="card text-green">
                     <table id="emaildata" class="table table-bordered" style="width:100%;">
@@ -47,31 +46,26 @@ include_once("../theme/header.php");
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input type="hidden" name="datasend" value="mailup">
-                                    <input name="email" id="emailInput" type="text" class="form-control form-control-sm"
-                                        require>
+                                    <input name="email" id="emailInput" type="text" class="form-control form-control-sm" require>
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input name="password" id="passInput" type="text"
-                                        class="form-control form-control-sm" require>
+                                    <input name="password" id="passInput" type="text" class="form-control form-control-sm" require>
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input name="nope" type="number" id="nopeInput" class="form-control form-control-sm"
-                                        require>
+                                    <input name="nope" type="number" id="nopeInput" class="form-control form-control-sm" require>
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3 text-center">
                                 <div class="form-group">
                                     <label>Status Email</label>
                                     <div class="from-control">
-                                        <input id="checkbox-1" name="status" type="checkbox" checked
-                                            data-toggle="toggle" data-onstyle="outline-success"
-                                            data-offstyle="outline-danger" data-style="hacker-mail" />
+                                        <input id="checkbox-1" name="status" type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-style="hacker-mail" />
                                     </div>
                                 </div>
                             </div>
@@ -123,31 +117,26 @@ include_once("../theme/header.php");
                                     <label>Email</label>
                                     <input type="hidden" name="datasend" value="editmail">
                                     <input type="hidden" id="id-edit" name="id-edit">
-                                    <input name="email" id="modal_email" type="text"
-                                        class="form-control form-control-sm">
+                                    <input name="email" id="modal_email" type="text" class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input name="password" id="modal_password" type="text"
-                                        class="form-control form-control-sm">
+                                    <input name="password" id="modal_password" type="text" class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input name="nope" type="number" id="modal_nohp"
-                                        class="form-control form-control-sm">
+                                    <input name="nope" type="number" id="modal_nohp" class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3 text-center">
                                 <div class="form-group">
                                     <label>Status Email</label>
                                     <div class="from-control">
-                                        <input name="status" type="checkbox" id="myCheckbox" data-toggle="toggle"
-                                            data-onstyle="outline-success" data-offstyle="outline-danger"
-                                            data-style="hacker-mail" checked />
+                                        <input name="status" type="checkbox" id="myCheckbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-style="hacker-mail" checked />
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +217,7 @@ include_once("../theme/header.php");
     </div>
 </div>
 
-<script src="../assets/js/tabel-email.js"></script>
+<script src="https://nead-pull.b-cdn.net/assets/js/tabel-email.js"></script>
 
 <?php
 include_once("../theme/footer.php");

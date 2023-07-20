@@ -15,7 +15,8 @@ include_once("../theme/header.php");
                         <input placeholder="Username" id="email" type="text" class="form-control form-control-sm">
                     </div>
                     <div class="col-lg-5 mb-3">
-                        <input placeholder="Password" id="password" type="password" class="form-control form-control-sm">
+                        <input placeholder="Password" id="password" type="password"
+                            class="form-control form-control-sm">
                     </div>
                     <div class="col-lg-2 mb-3">
                         <input type="submit" id="login-btn" class="btn btn-green btn-sm" value="login">
@@ -52,7 +53,7 @@ if (isset($_GET['logout']) && $_GET['logout'] === "success") {
 }
 
 ?>
-<script src="../assets/js/_login.js"></script>
+<script src="https://nead-pull.b-cdn.net/assets/js/_login.js"></script>
 <?php
 include_once("../theme/footer.php");
 ?>
