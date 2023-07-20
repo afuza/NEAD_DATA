@@ -47,7 +47,21 @@ if ($datasend == "mailup") {
 
 if ($datasend == "editmail") {
     $id = $_POST['id-edit'];
-    $image_url = ($_FILES['file']["name"] == null) ? $_POST['img-scr'] : uploadFile($_FILES['file'], 'email');
+
+    if ($_FILES['file']["name"] == null) {
+        $image_url = $_POST['img-scr'];
+    } else {
+        $image = $_FILES['file'];
+        $imagename = $_POST['img-scr'];
+        $imagename = explode('/', $imagename);
+        $imagename = end($imagename);
+        $respondel = deleteFile($imagename);
+        if ($respondel == 204) {
+            $image_url = uploadFile($image, 'site');
+        } else {
+            echo "error";
+        }
+    }
 
     if ($image_url == null) {
         echo "error";
@@ -86,7 +100,21 @@ if ($datasend == "siteup") {
 
 if ($datasend == "editsite") {
     $id = $_POST['id-edit'];
-    $image_url = ($_FILES['file']["name"] == null) ? $_POST['img-scr'] : uploadFile($_FILES['file'], 'site');
+
+    if ($_FILES['file']["name"] == null) {
+        $image_url = $_POST['img-scr'];
+    } else {
+        $image = $_FILES['file'];
+        $imagename = $_POST['img-scr'];
+        $imagename = explode('/', $imagename);
+        $imagename = end($imagename);
+        $respondel = deleteFile($imagename);
+        if ($respondel == 204) {
+            $image_url = uploadFile($image, 'site');
+        } else {
+            echo "error";
+        }
+    }
 
     if ($image_url == null) {
         echo "error";

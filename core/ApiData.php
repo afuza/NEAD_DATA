@@ -54,3 +54,18 @@ function get_country()
     $country = $record['country']['names']['en'];
     return $country;
 }
+
+function getCurrentURL()
+{
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://';
+    $host = $_SERVER['HTTP_HOST'];
+    $port = $_SERVER['SERVER_PORT'];
+    $url = $protocol . $host;
+    if ($_ENV['NODE_ENV'] !== "development") {
+        if (($protocol === 'http://' && $port !== 80) || ($protocol === 'https://' && $port !== 443)) {
+            $url .= ':' . $port;
+        }
+    }
+
+    return $url;
+}

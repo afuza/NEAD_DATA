@@ -1,2 +1,4 @@
 <?php
-header("Location: /main");
+// index.php
+
+header("location: /main");

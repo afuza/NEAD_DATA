@@ -1,0 +1,1 @@
+function TokenAcc() { return new Promise(function (o, i) { $.ajax({ url: api_uri + "/api/auth/refToken", type: "POST", xhrFields: { withCredentials: !0, crossDomain: !0 }, contentType: "application/json", success: function (n, e, i) { o(n) }, error: function (n, e) { i(n) } }) }) }

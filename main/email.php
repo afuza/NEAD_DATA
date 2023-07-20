@@ -61,7 +61,7 @@ include_once("../theme/header.php");
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input name="nope" type="text" id="nopeInput" class="form-control form-control-sm"
+                                    <input name="nope" type="number" id="nopeInput" class="form-control form-control-sm"
                                         require>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@ include_once("../theme/header.php");
 </div>
 
 <!-- Edit DATA -->
-<div class="modal fade" id="editmodal" role="dialog" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="editmodal" role="dialog" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content col-lg-7">
             <form id="edit-email" autocomplete="off" method="POST" enctype="multipart/form-data">
@@ -137,7 +137,8 @@ include_once("../theme/header.php");
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Nomor HP</label>
-                                    <input name="nope" type="text" id="modal_nohp" class="form-control form-control-sm">
+                                    <input name="nope" type="number" id="modal_nohp"
+                                        class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3 text-center">
@@ -175,7 +176,7 @@ include_once("../theme/header.php");
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-green" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" id="loading" name="save" class="btn btn-green-full">
+                    <input type="submit" id="loading-2" name="save" class="btn btn-green-full">
                 </div>
             </form>
         </div>
@@ -227,8 +228,7 @@ include_once("../theme/header.php");
     </div>
 </div>
 
-<script src="/assets/js/tabel-email.js"></script>
-<script src="/assets/js/crud_email.js"></script>
+<script src="../assets/js/tabel-email.js"></script>
 
 <?php
 include_once("../theme/footer.php");

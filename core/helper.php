@@ -52,6 +52,43 @@ function uploadFile($file, $strip)
     }
 }
 
+
+/**
+ * Delet a file to AWS S3 bucket.
+ *
+ * @param array $file The uploaded file data from $_FILES.
+ * @param string $strip The prefix to be added to the file key.
+ * @return string|AwsException The public URL of the uploaded file, or an error message if the upload fails.
+ */
+
+function deleteFile($key)
+{
+    $profil_credentials = [
+        'endpoint' => $_ENV['AWS_ENDPOINT'],
+        'region' => $_ENV['AWS_REGION'],
+        'version' => 'latest',
+        'use_path_style_endpoint' => true,
+        'credentials' => [
+            'key'    => $_ENV['AWS_ACCESS_KEY_ID'],
+            'secret' => $_ENV['AWS_SECRET_ACCESS_KEY'],
+        ],
+        'http' => [
+            'verify' => false,
+        ],
+    ];
+    $s3 = new S3Client($profil_credentials);
+    try {
+        $result = $s3->deleteObject([
+            'Bucket' => $_ENV['AWS_BUCKET'],
+            'Key'    => $key,
+        ]);
+        $httpcode = $result['@metadata']['statusCode'];
+        return $httpcode;
+    } catch (AwsException $e) {
+        return $e->getMessage();
+    }
+}
+
 /**
  * Saves email data by making a POST request to the API.
  *
@@ -63,7 +100,8 @@ function emailSave($body, $apiUri)
 {
     try {
         $header = [
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . getTokenAcc($apiUri)
         ];
         $client = new Client([
             'verify' => false
@@ -96,7 +134,8 @@ function editEmail($body, $id, $apiUri)
 {
     try {
         $header = [
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . getTokenAcc($apiUri)
         ];
 
         $client = new Client([
@@ -129,7 +168,8 @@ function siteSave($body, $apiUri)
 {
     try {
         $header = [
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . getTokenAcc($apiUri)
         ];
         $client = new Client([
             'verify' => false
@@ -162,7 +202,8 @@ function editSite($body, $id, $apiUri)
 {
     try {
         $header = [
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Bearer ' . getTokenAcc($apiUri)
         ];
 
         $client = new Client([
@@ -178,6 +219,36 @@ function editSite($body, $id, $apiUri)
             return $data;
         } else {
             return "DOWNLOAD ERROR";
+        }
+    } catch (RequestException $e) {
+        return $e->getMessage();
+    }
+}
+
+function getTokenAcc($apiUri)
+{
+    $refreshToken = $_COOKIE['refreshToken'];
+
+    try {
+        $header = [
+            'Content-Type' => 'application/json',
+            'cookie' => 'refreshToken=' . $refreshToken . ';'
+        ];
+
+        $client = new Client([
+            'verify' => false
+        ]);
+
+        $uri = "$apiUri/api/auth/refToken";
+        $request = new Request('POST', $uri, $header);
+        $res = $client->sendAsync($request)->wait();
+        $code = $res->getStatusCode();
+        $data = json_decode($res->getBody());
+        $accessToken = $data->accessToken;
+        if ($code === 200) {
+            return $accessToken;
+        } else {
+            return "ERROR";
         }
     } catch (RequestException $e) {
         return $e->getMessage();

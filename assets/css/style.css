@@ -277,6 +277,9 @@ footer {
 .footer-logout{
 margin-top: 8px;
 }
+#logout{
+    cursor: pointer !important;
+}
 
 .toggle.hacker-mail{
     color: #149414;
@@ -348,7 +351,10 @@ input[type=file]::file-selector-button{
     max-width: 40%;
     margin: auto;
 }
-
+.swal2-title, .swal2-content {
+      color: #149414;
+      font-family: Hack, monospace;
+}
 
 .btn-close{
     background-color: #149414;
@@ -369,6 +375,14 @@ input[type=file]::file-selector-button{
     color: #dbdf0c;
     cursor: pointer;
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 
 /* width */
 ::-webkit-scrollbar {

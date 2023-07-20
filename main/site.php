@@ -29,7 +29,7 @@ include_once("../theme/header.php");
     </div>
 </div>
 <!-- Input Data -->
-<div class="modal fade mt-2" id="inputdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade " id="inputdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content col-lg-7">
             <form id="add-site" autocomplete="off" method="POST" enctype="multipart/form-data">
@@ -190,7 +190,6 @@ include_once("../theme/header.php");
 </div>
 
 <script src="../assets/js/tabel-situs.js"></script>
-<script src="../assets/js/curd_site.js"></script>
 <?php
 include_once("../theme/footer.php");
 ?>

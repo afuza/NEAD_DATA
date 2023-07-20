@@ -1,9 +1,20 @@
 <?php
 include_once("../core/ApiData.php");
 $uri = $_SERVER['REQUEST_URI'];
+$curretUri = getCurrentURL();
+$cookie = $_SERVER['HTTP_COOKIE'];
+$refreshToken = $_COOKIE['refreshToken'];
+
+if (preg_match("/login.php/", $uri)) {
+    if (isset($refreshToken)) {
+        header("Location: $curretUri/main/email.php");
+    }
+} else if (preg_match("/email.php/", $uri) || preg_match("/site.php/", $uri) ||     preg_match("/blog.php/", $uri)) {
+    if (!isset($refreshToken)) {
+        header("Location: $curretUri/main/_login.php");
+    }
+}
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,9 +26,16 @@ $uri = $_SERVER['REQUEST_URI'];
     <link rel="shortcut icon" href="/assets/img/anon.png" type="image/x-icon" />
     <link rel="icon" href="/assets/img/anon.png" type="image/x-icon" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+    <!-- Include Jquery -->
     <script src="../assets/js/jquery-3.7.0.min.js"></script>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <!-- Include Popper.js -->
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0/dist/js.cookie.min.js"></script>
+    <!-- Include stylesheets  -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
     <!-- Data Table -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.3.2/css/fixedHeader.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.bootstrap.min.css">
@@ -26,11 +44,11 @@ $uri = $_SERVER['REQUEST_URI'];
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../assets/css/style.css" />
     <script>
         var api_uri = '<?= $api_uri; ?>';
+        var uriLocal = '<?= $curretUri; ?>';
     </script>
+    <script src="../assets/js/header.js"></script>
 </head>
 
 <body>
@@ -61,7 +79,7 @@ $uri = $_SERVER['REQUEST_URI'];
                     </div>
                 </div>
             </div>
-        <?php } else if ($uri == "/main") { ?>
+        <?php } else if (preg_match("/main/", $uri)) { ?>
             <div class="containter">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 text-center text-green">
