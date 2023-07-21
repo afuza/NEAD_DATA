@@ -12,7 +12,7 @@ include_once("../theme/header.php");
             <form id="login" autocomplete="off" method="POST">
                 <div class="row">
                     <div class="col-lg-5 mb-3">
-                        <input placeholder="Username" id="email" type="text" class="form-control form-control-sm">
+                        <input placeholder="Username" id="username" type="text" class="form-control form-control-sm">
                     </div>
                     <div class="col-lg-5 mb-3">
                         <input placeholder="Password" id="password" type="password"
@@ -22,38 +22,25 @@ include_once("../theme/header.php");
                         <input type="submit" id="login-btn" class="btn btn-green btn-sm" value="login">
                     </div>
                 </div>
-                <div class="text-center text-light">
-                    <p id="cookie"><?= $_SESSION['login_alert_shown']; ?></p>
-                </div>
             </form>
+            <div class="text-center text-green">
+                <p id="login-error"></p>
+            </div>
         </div>
     </div>
-
 </div>
-<?php
-if (isset($_GET['logout']) && $_GET['logout'] === "success") {
-    if (!isset($_COOKIE['logout_alert_shown'])) {
-        echo "<script>
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Login Success',
-            showConfirmButton: false,
-            timer: 3000,
-            iconColor: '#149414',
-            confirmButtonColor: '#149414',
-            background: 'black',
-        });
-        Cookies.set('logout_alert_shown', 'true', {
-            expires: 9999,
+<script>
+$(document).ready(function() {
+    if (Cookies.get('logout_alert_shown')) {
+        $('#login-error').html('<div class="text-green">SEE YOU NEXT TIME AGENT</div>');
+        Cookies.set('logout_alert_shown', 'XMASDOQW', {
+            expires: new Date(0),
             path: '/',
         });
-        </script>";
     }
-}
-
-?>
-<script src="https://nead-pull.b-cdn.net/assets/js/_login.js"></script>
+});
+</script>
+<script src="../assets/js/_login.js"></script>
 <?php
 include_once("../theme/footer.php");
 ?>

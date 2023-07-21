@@ -3,9 +3,9 @@ include_once("../core/ApiData.php");
 $uri = $_SERVER['REQUEST_URI'];
 $curretUri = getCurrentURL();
 $cookie = $_SERVER['HTTP_COOKIE'];
-$refreshToken = $_COOKIE['refreshToken'];
+$refreshToken = $_COOKIE['refresh_Token'];
 
-if (preg_match("/login.php/", $uri)) {
+if (preg_match("/_login.php/", $uri)) {
     if (isset($refreshToken)) {
         header("Location: $curretUri/main/email.php");
     }
@@ -45,10 +45,10 @@ if (preg_match("/login.php/", $uri)) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css">
     <script>
-        var api_uri = '<?= $api_uri; ?>';
-        var uriLocal = '<?= $curretUri; ?>';
+    var api_uri = '<?= $api_uri; ?>';
+    var uriLocal = '<?= $curretUri; ?>';
     </script>
-    <script src="https://nead-pull.b-cdn.net/assets/js/header.js"></script>
+    <script src="../assets/js/header.js"></script>
 </head>
 
 <body>
@@ -57,35 +57,36 @@ if (preg_match("/login.php/", $uri)) {
 
         if (preg_match("/email.php/", $uri) || preg_match("/site.php/", $uri) || preg_match("/blog.php/", $uri)) { ?>
 
-            <div class="container">
-                <div class="col-lg-12 nav-hack">
-                    <div class="row justify-content-center align-items-center text-center text-uppercase text-green g-2">
-                        <div class="col"><a class="nav-link 
+        <div class="container">
+            <div class="col-lg-12 nav-hack">
+                <div class="row justify-content-center align-items-center text-center text-uppercase text-green g-2">
+                    <div class="col"><a class="nav-link 
                     <?php if (preg_match("/email.php/", $uri)) {
                         echo "active";
-                    }  ?>                                                            " href="email.php"><i class="icon" data-feather="mail"></i>Email</a>
-                        </div>
-                        <div class="col"><a class="nav-link                     
+                    }  ?>                                                            " href="email.php"><i class="icon"
+                                data-feather="mail"></i>Email</a>
+                    </div>
+                    <div class="col"><a class="nav-link                     
                         <?php if (preg_match("/site.php/", $uri)) {
                             echo "active";
                         }  ?>   " href="site.php"><i class="icon" data-feather="globe"></i>Site
-                                Pay</a>
-                        </div>
-                        <div class="col"><a class="nav-link    
+                            Pay</a>
+                    </div>
+                    <div class="col"><a class="nav-link    
                         <?php if (preg_match("/blog.php/", $uri)) {
                             echo "active";
                         }  ?> " href="blog.php"><i class="icon" data-feather="database"></i>Blog</a>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
         <?php } else if (preg_match("/main/", $uri)) { ?>
-            <div class="containter">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12 text-center text-green">
-                        <h1 class="login-tittle">Login Your Access <?= $uri ?></h1>
-                    </div>
+        <div class="containter">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center text-green">
+                    <h1 class="login-tittle">Login Your Access <?= $uri ?></h1>
                 </div>
             </div>
+        </div>
         <?php } ?>
     </div>

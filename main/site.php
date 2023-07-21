@@ -7,7 +7,8 @@ include_once("../theme/header.php");
     <div class="col-lg-12">
         <div class="main">
             <h3 class="text-center mt-5">Email Saving</h3>
-            <button class="btn btn-green mt-2" data-bs-toggle="modal" data-bs-target="#inputdata"><i data-feather="plus"></i>ADD</button>
+            <button class="btn btn-green mt-2" data-bs-toggle="modal" data-bs-target="#inputdata"><i
+                    data-feather="plus"></i>ADD</button>
             <div class="col-lg-12 mt-4">
                 <div class="card text-green">
                     <table id="emaildata" class="table table-bordered" style="width:100%;">
@@ -29,7 +30,8 @@ include_once("../theme/header.php");
     </div>
 </div>
 <!-- Input Data -->
-<div class="modal fade " id="inputdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="inputdata" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content col-lg-7">
             <form id="add-site" autocomplete="off" method="POST" enctype="multipart/form-data">
@@ -50,7 +52,8 @@ include_once("../theme/header.php");
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input name="email" id="emailInput" type="text" class="form-control form-control-sm">
+                                    <input name="email" id="emailInput" type="text"
+                                        class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
@@ -86,7 +89,8 @@ include_once("../theme/header.php");
     </div>
 </div>
 <!-- Edit DATA -->
-<div class="modal fade mt-2" id="editmodal" tabindex="-1" aria-hidden="true">
+<div class="modal fade mt-2" data-bs-backdrop="static" data-bs-keyboard="false" id="editmodal" tabindex="-1"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content col-lg-7">
             <form id="edit-site" autocomplete="off" method="POST" enctype="multipart/form-data">
@@ -95,6 +99,7 @@ include_once("../theme/header.php");
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="waiting"></div>
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-6 mb-3">
@@ -102,19 +107,22 @@ include_once("../theme/header.php");
                                     <label>Situs</label>
                                     <input type="hidden" name="datasend" value="editsite">
                                     <input type="hidden" id="id-edit" name="id-edit">
-                                    <input name="situs" type="text" id="modal_situs" class="form-control form-control-sm">
+                                    <input name="situs" type="text" id="modal_situs"
+                                        class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input name="email" type="text" id="modal_email" class="form-control form-control-sm">
+                                    <input name="email" type="text" id="modal_email"
+                                        class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
                                 <div class="form-group">
                                     <label>Earning (dolar)</label>
-                                    <input name="earning" type="text" id="modal_earning" class="form-control form-control-sm">
+                                    <input name="earning" type="text" id="modal_earning"
+                                        class="form-control form-control-sm">
                                 </div>
                             </div>
                             <div class="col-lg-6 mb-3">
@@ -144,7 +152,8 @@ include_once("../theme/header.php");
 </div>
 
 <!-- View DATA -->
-<div class="modal fade " id="dataModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade " id="dataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content col-lg-7">
             <form autocomplete="off">
@@ -153,6 +162,7 @@ include_once("../theme/header.php");
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="waiting-1"></div>
                     <div class="col-lg-12">
                         <div class="text-center text-light" id="your_modal_date"></div>
                         <div id="your_modal_detail"></div>
@@ -167,7 +177,8 @@ include_once("../theme/header.php");
     </div>
 </div>
 <!-- View Gambar -->
-<div class="modal fade mt-5" id="view_gambar" tabindex="-1" aria-hidden="true">
+<div class="modal fade mt-5" id="view_gambar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content col-lg-7">
             <form autocomplete="off">
@@ -176,6 +187,7 @@ include_once("../theme/header.php");
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div id="waiting-2"></div>
                     <div class="col-lg-12">
                         <div id="img_modal"></div>
                     </div>
@@ -189,7 +201,7 @@ include_once("../theme/header.php");
     </div>
 </div>
 
-<script src="https://nead-pull.b-cdn.net/assets/js/tabel-situs.js"></script>
+<script src="../assets/js/tabel-site.js"></script>
 <?php
 include_once("../theme/footer.php");
 ?>

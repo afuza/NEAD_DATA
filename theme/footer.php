@@ -26,29 +26,7 @@
 <script>
     feather.replace()
 </script>
-<?php
-if (isset($_GET['login']) && $_GET['login'] === "success") {
-    if (!isset($_COOKIE['login_alert_shown'])) {
-        echo "<script>
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Login Success',
-            showConfirmButton: false,
-            timer: 3000,
-            iconColor: '#149414',
-            confirmButtonColor: '#149414',
-            background: 'black',
-        });
-        Cookies.set('login_alert_shown', 'true', {
-                    expires: 9999,
-                    path: '/',
-        });
-        </script>";
-    }
-}
-?>
-<script src="https://nead-pull.b-cdn.net/assets/js/footer.js"></script>
+<script src="../assets/js/footer.js"></script>
 </body>
 
 </html>
