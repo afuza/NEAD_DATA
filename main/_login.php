@@ -40,7 +40,7 @@ $(document).ready(function() {
     }
 });
 </script>
-<script src="../assets/js/_login.js"></script>
+<script src="https://nead-pull.b-cdn.net/assets/js/_login.js"></script>
 <?php
 include_once("../theme/footer.php");
 ?>
