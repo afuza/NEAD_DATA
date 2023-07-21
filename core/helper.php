@@ -429,7 +429,7 @@ function login($apiUri, $body)
             $refreshToken = explode(';', $refreshToken);
             $refreshToken = explode('=', $refreshToken[0]);
             $refreshToken = $refreshToken[1];
-            setcookie('refresh_Token', $refreshToken, time() + (86400 * 7), "/", "", false, true);
+            setcookie('refresh_Token', $refreshToken, time() + (86400 * 7), "/", "", true, true);
             return "success";
         } else {
             return $data->message;
@@ -460,7 +460,7 @@ function logout($apiUri)
         $res = $client->sendAsync($request)->wait();
         $code = $res->getStatusCode();
         if ($code === 200) {
-            setcookie('refresh_Token', '', time() - 3600, "/", "", false, true);
+            setcookie('refresh_Token', '', time() - 3600, "/", "", true, true);
             setcookie('logout_alert_shown', '', time() + 3600, "/", "", false, true);
             return "success";
         } else {
