@@ -26,7 +26,7 @@
 <script>
     feather.replace()
 </script>
-<script src="../assets/js/footer.js"></script>
+<script src="https://nead-pull.b-cdn.net/assets/js/footer.js"></script>
 </body>
 
 </html>
